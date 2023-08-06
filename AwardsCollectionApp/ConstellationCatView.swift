@@ -26,7 +26,7 @@ struct StarMapView: View {
                 
                 drawStars(size: geometry.size) // Shining stars
                 drawConstellations(size: geometry.size) // Orion constellation
-                drawMoon(size: geometry.size) // Orion constellation
+                drawMoon(size: geometry.size) // Moon
                 drawPlanets(size: geometry.size) // Jupiter and Neptune
             }
         }
@@ -71,7 +71,7 @@ struct StarMapView: View {
         ]
         
         let smileyArc1 = Path { path in
-            // Draw a smaller arc above Jupiter (rotated in the opposite direction)
+            // Draw a smaller arc above Jupiter
             let startAngle = Angle.degrees(120)
             let endAngle = Angle.degrees(240)
             path.addArc(
@@ -86,7 +86,7 @@ struct StarMapView: View {
             .foregroundColor(.blue)
         
         let smileyArc2 = Path { path in
-            // Draw a smaller arc above Neptune (rotated in the opposite direction)
+            // Draw a smaller arc above Neptune
             let startAngle = Angle.degrees(120)
             let endAngle = Angle.degrees(240)
             path.addArc(
@@ -179,7 +179,7 @@ struct StarMapView: View {
                 ))
                 .frame(width: moonSize.width, height: moonSize.height)
                 .position(x: size.width * 0.8, y: size.height * 0.2)
-                .blur(radius: blurRadius) // Apply the blur effect to the moon's edge
+                .blur(radius: blurRadius)
             
         }
     }
