@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-struct Star: Identifiable, Hashable {
-    var id = UUID()
-    var position: CGPoint
-    var size: CGFloat
-    var brightness: Double
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
 struct StarMapView: View {
     @State private var showStars = false
     @State private var showConstellations = false
@@ -31,30 +20,26 @@ struct StarMapView: View {
                 
                 if showStars {
                     drawStars(size: geometry.size) // Shining stars
+                        .transition(.opacity)
                 }
                 if showConstellations {
                     drawConstellations(size: geometry.size) // Cassiopeia constellation
+                        .transition(.opacity)
                 }
                 if showMoon {
                     drawMoon(size: geometry.size) // Moon
+                        .transition(.opacity)
                 }
                 if showPlanets {
                     drawPlanets(size: geometry.size) // Jupiter and Neptune
+                        .transition(.opacity)
                 }
             }
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    showStars = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    showConstellations = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
-                    showPlanets = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-                    showMoon = true
-                }
+                Animations.animateStars($showStars)
+                Animations.animateConstellations($showConstellations)
+                Animations.animatePlanets($showPlanets)
+                Animations.animateMoon($showMoon)
             }
         }
     }
@@ -263,44 +248,5 @@ struct ConstellationCatView_Previews: PreviewProvider {
     static var previews: some View {
         StarMapView()
             .frame(width: 400, height: 400)
-    }
-}
-
-struct TwinkleAnimationModifier: AnimatableModifier {
-    var animatableData: Double {
-        get { twinkleValue }
-        set { twinkleValue = newValue }
-    }
-    
-    @State private var twinkleValue = Double.random(in: 0...1)
-    private var twinklingColors: [Color] = [
-        .white, .yellow, .blue, .green, .red, .orange, .indigo, .mint
-    ]
-    
-    func body(content: Content) -> some View {
-        content
-            .colorMultiply(twinklingColors.randomElement() ?? .white)
-            .opacity(twinkleValue)
-            .onAppear {
-                withAnimation(Animation.easeInOut(duration: 0.5)
-                    .repeatForever(autoreverses: true)) {
-                    twinkleValue = Double.random(in: 0...1)
-                }
-            }
-    }
-}
-
-struct PulsatingHeart: View {
-    @State private var pulsate = false
-    
-    var body: some View {
-        Image(systemName: "heart.fill")
-            .scaleEffect(pulsate ? 2 : 1)
-            .onAppear {
-                withAnimation(Animation.easeInOut(duration: 1.5)
-                    .repeatForever(autoreverses: true)) {
-                    pulsate.toggle()
-                }
-            }
     }
 }

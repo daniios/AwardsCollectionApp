@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A52BC44E2A800D7900DD0CFC /* ConstellationCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BC44D2A800D7900DD0CFC /* ConstellationCatView.swift */; };
+		A52BC4512A80C3D900DD0CFC /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BC4502A80C3D900DD0CFC /* Star.swift */; };
+		A52BC4552A80C4B100DD0CFC /* TwinkleAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BC4542A80C4B100DD0CFC /* TwinkleAnimationModifier.swift */; };
+		A52BC4572A80C4FA00DD0CFC /* PulsatingHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BC4562A80C4FA00DD0CFC /* PulsatingHeart.swift */; };
+		A52BC4592A80C6FD00DD0CFC /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BC4582A80C6FD00DD0CFC /* Animations.swift */; };
 		A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */; };
 		A89D0933267B76D400C1FB66 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D0932267B76D400C1FB66 /* MainView.swift */; };
 		A89D0935267B76D600C1FB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89D0934267B76D600C1FB66 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		A52BC44D2A800D7900DD0CFC /* ConstellationCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstellationCatView.swift; sourceTree = "<group>"; };
+		A52BC4502A80C3D900DD0CFC /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		A52BC4542A80C4B100DD0CFC /* TwinkleAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinkleAnimationModifier.swift; sourceTree = "<group>"; };
+		A52BC4562A80C4FA00DD0CFC /* PulsatingHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingHeart.swift; sourceTree = "<group>"; };
+		A52BC4582A80C6FD00DD0CFC /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		A89D092D267B76D400C1FB66 /* AwardsCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwardsCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsCollectionAppApp.swift; sourceTree = "<group>"; };
 		A89D0932267B76D400C1FB66 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -47,6 +55,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52BC44F2A80C3C700DD0CFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A52BC4502A80C3D900DD0CFC /* Star.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A52BC4522A80C42D00DD0CFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A52BC44D2A800D7900DD0CFC /* ConstellationCatView.swift */,
+				A52BC4562A80C4FA00DD0CFC /* PulsatingHeart.swift */,
+				A52BC4582A80C6FD00DD0CFC /* Animations.swift */,
+				A89D093F267B777E00C1FB66 /* StarterView.swift */,
+				A89D0932267B76D400C1FB66 /* MainView.swift */,
+				A8A20B562837907D00C7401B /* CartRacingView.swift */,
+				A89D0941267B77C800C1FB66 /* AwardsView.swift */,
+				A8E1B482267B7972005E98AA /* GradientRectangles.swift */,
+				A8E1B484267B7978005E98AA /* PathView.swift */,
+				A8E1B480267B7967005E98AA /* CurvesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A52BC4532A80C47B00DD0CFC /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				A52BC4542A80C4B100DD0CFC /* TwinkleAnimationModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		A52BC45A2A80C84300DD0CFC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */,
+				A89D0939267B76D600C1FB66 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A52BC45B2A80C89400DD0CFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A89D0934267B76D600C1FB66 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A89D0924267B76D400C1FB66 = {
 			isa = PBXGroup;
 			children = (
@@ -66,17 +124,11 @@
 		A89D092F267B76D400C1FB66 /* AwardsCollectionApp */ = {
 			isa = PBXGroup;
 			children = (
-				A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */,
-				A89D093F267B777E00C1FB66 /* StarterView.swift */,
-				A89D0932267B76D400C1FB66 /* MainView.swift */,
-				A8A20B562837907D00C7401B /* CartRacingView.swift */,
-				A89D0941267B77C800C1FB66 /* AwardsView.swift */,
-				A8E1B482267B7972005E98AA /* GradientRectangles.swift */,
-				A8E1B484267B7978005E98AA /* PathView.swift */,
-				A8E1B480267B7967005E98AA /* CurvesView.swift */,
-				A52BC44D2A800D7900DD0CFC /* ConstellationCatView.swift */,
-				A89D0934267B76D600C1FB66 /* Assets.xcassets */,
-				A89D0939267B76D600C1FB66 /* Info.plist */,
+				A52BC45B2A80C89400DD0CFC /* Resources */,
+				A52BC45A2A80C84300DD0CFC /* App */,
+				A52BC4532A80C47B00DD0CFC /* Modifiers */,
+				A52BC4522A80C42D00DD0CFC /* Views */,
+				A52BC44F2A80C3C700DD0CFC /* Models */,
 				A89D0936267B76D600C1FB66 /* Preview Content */,
 			);
 			path = AwardsCollectionApp;
@@ -160,10 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52BC4572A80C4FA00DD0CFC /* PulsatingHeart.swift in Sources */,
 				A8A20B572837907D00C7401B /* CartRacingView.swift in Sources */,
 				A8E1B481267B7967005E98AA /* CurvesView.swift in Sources */,
+				A52BC4552A80C4B100DD0CFC /* TwinkleAnimationModifier.swift in Sources */,
 				A89D0942267B77C800C1FB66 /* AwardsView.swift in Sources */,
+				A52BC4512A80C3D900DD0CFC /* Star.swift in Sources */,
 				A89D0933267B76D400C1FB66 /* MainView.swift in Sources */,
+				A52BC4592A80C6FD00DD0CFC /* Animations.swift in Sources */,
 				A8E1B485267B7979005E98AA /* PathView.swift in Sources */,
 				A52BC44E2A800D7900DD0CFC /* ConstellationCatView.swift in Sources */,
 				A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */,
@@ -210,6 +266,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DSTROOT = "/tmp/$(PROJECT_NAME).dst";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -271,6 +328,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = "/tmp/$(PROJECT_NAME).dst";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -300,7 +358,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AwardsCollectionApp/Preview Content\"";
 				DEVELOPMENT_TEAM = GBTTU32HS2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AwardsCollectionApp/Info.plist;
+				INFOPLIST_FILE = AwardsCollectionApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,7 +380,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AwardsCollectionApp/Preview Content\"";
 				DEVELOPMENT_TEAM = GBTTU32HS2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AwardsCollectionApp/Info.plist;
+				INFOPLIST_FILE = AwardsCollectionApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
