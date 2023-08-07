@@ -50,10 +50,10 @@ struct StarMapView: View {
                     showConstellations = true
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
-                    showMoon = true
+                    showPlanets = true
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-                    showPlanets = true
+                    showMoon = true
                 }
             }
         }
@@ -230,6 +230,10 @@ struct StarMapView: View {
                 .position(x: size.width * 0.8, y: size.height * 0.2)
                 .blur(radius: blurRadius)
             
+            PulsatingHeart()
+                .foregroundColor(.red)
+                .frame(width: 30, height: 30)
+                .position(x: size.width * 0.8, y: size.height * 0.2)
         }
     }
     
@@ -281,6 +285,21 @@ struct TwinkleAnimationModifier: AnimatableModifier {
                 withAnimation(Animation.easeInOut(duration: 0.5)
                     .repeatForever(autoreverses: true)) {
                     twinkleValue = Double.random(in: 0...1)
+                }
+            }
+    }
+}
+
+struct PulsatingHeart: View {
+    @State private var pulsate = false
+    
+    var body: some View {
+        Image(systemName: "heart.fill")
+            .scaleEffect(pulsate ? 2 : 1)
+            .onAppear {
+                withAnimation(Animation.easeInOut(duration: 1.5)
+                    .repeatForever(autoreverses: true)) {
+                    pulsate.toggle()
                 }
             }
     }
